@@ -3,7 +3,7 @@
 
 
 	/*** base ***/
-* { 
+* {
 	margin:0;
 	padding:0;
 	-webkit-text-size-adjust:none;
@@ -28,7 +28,7 @@ body {
 }
 a { text-decoration:none; margin:0; padding:0; color:#000; }
 a[href^="tel"]{ font-style:normal}
-header, section, nav, h1, h2, h3, h4, img, input, div, p, ul, ol, ul, dl, textarea { margin:0; padding:0; line-height: 0; }
+header, section, nav, h1, h2, h3, h4, img, input, div, p, ul, ol, li, dl, textarea { margin:0; padding:0; line-height: 0; }
 li { list-style-type:none; }
 img { border:0; }
 fieldset, form {  border:0; }
