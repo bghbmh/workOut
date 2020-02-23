@@ -1,4 +1,3 @@
-<!--#include virtual="/insurance/config.asp" //-->
 <!doctype html>
 <html lang="ko">
 <head>
@@ -10,33 +9,6 @@
 <title>보험</title>
 
 </head>
-
-<script language="javascript">
-function getRadioVal(obj) {
-	var i, value = "";
-
-	
-	if (obj) {
-		if (typeof(obj.length) == "undefined") {
-			if (obj.checked) {
-				value = obj.value;
-			}
-		}
-		else {
-			for (i=0; i<obj.length; i++) {
-				if (obj[i].checked) {
-					value = obj[i].value;
-					break;
-				}
-			}
-		}
-	}
-	return value;
-}
-
-
-
-</script>
 
 
 <body>
