@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no, address=no, email=no">
+
+<title>보험</title>
+
+<style>
+* {margin:0; padding: 0;}
+html, body {margin:0;padding:0;background-color:#fff; width:100%; height:100%; font-family:"맑은고딕", "돋음"; }
+hr {display:none;}
+img,fieldset {border:0 none;}
+dl,ul,ol,li {list-style: none;}
+h1,h2,h3,h4,h5,dl,dt,dd,ul,li,ol,th,td,p,blockquote,form,fieldset,legend, img, div {margin:0;padding:0; box-sizing: border-box;}
+table {border-collapse:collapse; font-family:"맑은고딕", "돋음"; }
+a {text-decoration:none;color:#333; } 
+a:hover {text-decoration:none;color:#333; }
+input,textarea {color:#333; border:1px solid #dfdfdf;vertical-align:middle;font-family:"맑은고딕", "돋음"; }
+input[type=text]{border:1px solid #e1e1e1;}
+input[type=checkbox]{border:none !important}
+input[type=radio]{border:none !important}
+select {background: #fff;color:#333; font-size:12px;vertical-align:middle;font-family:"맑은고딕", "돋음"; border:1px solid #dfdfdf;}
+body,th,td {color:#333;letter-spacing:-1px}
+em{font-style:normal}
+caption { display:none;}
+
+
+.wrap{display: block; position: relative; width: 100%; max-width: 1000px;margin: 0 auto;line-height: 0;}
+.db{display: block; position: relative; width: 100%; line-height: 1.6;padding: 6% 0; background: #2a3b4b;}
+.db ul{display: block; position: relative; width: 70%; margin:0 auto;}
+.db ul li{color:#fff; padding:.5% 0;}
+.db ul li:nth-child(1){ font-size: 2em; text-align: center; padding: 1em 0; }
+.db ul li input[type=text]{display: block; width: 98%; padding:1.5% 1%; font-size: 1em; color:#333; }
+.db ul li input[type=text]::placeholder{  font-size:1em; color:#555;}
+.db ul li .tfield{  width: 98%; height:100px; font-size:1em; color:#999;  padding:1.5% 1%;}
+.db ul li .tfield::placeholder{  font-size:1em; color:#555;}
+.db .inCheck{display: block; position: relative; width: 70%; margin:1em auto; color:#fff;}
+.db .inCheck input[type=checkbox]{display: none;}
+
+.db .inCheck input[type=checkbox] + label{
+    display: inline-block;  
+    cursor: pointer;  
+    position: relative;  
+    font-size: 1em;
+    height: 1.8em;
+    vertical-align: top;
+}
+.db .inCheck input[type=checkbox] + label span{
+    display: inline-block;  
+    position: relative;  
+    font-size: 1em;
+    height: 1.8em;
+    margin:0 0 0 10px; 
+    vertical-align: top; 
+}
+
+.db .inCheck input[type=checkbox]+ label:before { 
+    content: "";  
+    display: inline-block;    
+    width: 1.8em;     
+    height: 1.8em; 
+    background-color: #fff;  
+    border-radius: 2px;  
+}
+.db .inCheck input[type=checkbox]:checked + label:before { 
+    content: "\2713";  /* 체크모양 */
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);  
+    color: #fff;  
+    background:#2f87c1;
+    text-align: center; 
+} 
+
+.db .inCheck .btnPop{display: inline-block; cursor: pointer;}
+.db .inCheck .privacyinfo{ display: block; width:100%; }
+.db .inCheck .privacyinfo a{ display: inline-block; margin: 1em 0 1em 2.4em; color:#fff;  }
+.db .btnSubmit{ display: block; position: relative; width: 70%; margin:0 auto;}
+.db .btnSubmit a{ 
+    display: block;
+    width: 100%; 
+    padding:.5em 0;
+    font-size: 1.3em;
+    color: #2a3b4b;
+    text-align: center;
+    background: #f79a20;
+    font-weight: bold;
+}
+
+.modal { opacity: 0; visibility: hidden; position: fixed; top: 0; right: 0; bottom: 0; left: 0; text-align: left; background: rgba(0,0,0, .6); transition: opacity .25s ease; line-height: 1.6;} 
+.modal_bg { position: absolute; top: 0; right: 0; bottom: 0; left: 0; cursor: pointer; } 
+.modal-state { display: none; } 
+.modal-state:checked + .modal { opacity: 1; visibility: visible; } 
+.modal-state:checked + .modal .modal__inner { top: 0; } 
+.modal_inner { transition: top .25s ease; position: absolute; top: 0%; right: 0; bottom: 0; left: 0; width: 50%; margin: auto; overflow: auto; background: #fff; border-radius: 5px; padding: 1em 2em; height: 55%; } 
+.modal_close { position: absolute; right: 1em; top: 1em; width: 1.1em; height: 1.1em; cursor: pointer; } 
+.modal_close:after, .modal_close:before { content: ''; position: absolute; width: 2px; height: 1.5em; background: #ccc; display: block; transform: rotate(45deg); left: 50%; margin: -3px 0 0 -1px; top: 0; } 
+.modal_close:hover:after, .modal_close:hover:before { background: #aaa; } 
+.modal_close:before { transform: rotate(-45deg); } 
+@media screen and (max-width: 769px) { .modal_inner { width: 90%; height: 90%; margin-top: 50px ; box-sizing: border-box; } } 
+@media (max-width: 414px){ 
+    .db{padding: 6% 0 20%;}
+    .db ul{width: 85%;}
+    .db .inCheck{width: 85%;}
+    .db .btnSubmit{width: 85%;}
+    .db .inCheck .privacyinfo a {margin: .5em 0 .5em 2.4em;}
+}
+
+</style>
+
+
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="wrap">
+
+		<img src="아하봄_태권도쇼핑.jpg" style="width: 100%;" alt="보험" >  
+
+	    <form action="" method="post" name="vggo03">
+			<input type="hidden" name="tblog_code" value="b15">
+			<div class="db">
+				<ul>
+					<li>보험상담신청</li>
+					<li><input type="text" name="tq_name" class="in mR" placeholder="이름을 입력해주세요" ></li>
+					<li><input type="text" name="tq_tel" class="in" placeholder="연락처, 숫자만 입력해주세요"></li>    
+					<li><textarea name="tq_content" class="tfield" placeholder="문의내용"></textarea></li>
+				</ul>
+				<div class="inCheck">
+					<input type="checkbox" id="ck" name="tq_aggre" value="Y" /><label for="ck"><span>개인정보 수집 및 이용동의</span></label>
+					<label class="btnPop" for="open-pop">[보기]</label>
+					<span class="privacyinfo"><a href="../pri/privacyinfo.html" target="_blank">개인정보 취급방침 보기</a></span>
+
+				</div>
+				<div class="btnSubmit">
+					<a href="">보험상담신청</a>
+				</div>
+		    </div>
+		</form>   
+
+
+
+
+        <input class="modal-state" id="open-pop" type="checkbox" /> 
+       
+        <div class="modal"> 
+           <label class="modal_bg" for="open-pop"></label> 
+           <div class="modal_inner"> 
+             <label class="modal_close" for="open-pop"></label>    
+                <h3>개인정보수집 및 이용동의 </h3>
+                <div class="pri">
+                    <p class="priTitle">㈜아하봄의 개인정보 수집 ·이용에 관한 안내입니다.</p>
+                    <p class="priTx">개인정보 수집 및 이용목적에 대하여 동의를 거부하실 수 있으며, 동의를 거부하실 경우 서비스 이용에 제한이 될 수 있습니다.</p><br>
+                    
+                    <p class="priTitle">1.수집하는 개인정보 항목 및 수집방법</p>
+                    <p class="priTx">가. 수집하는 개인정보의 항목<br>
+                    회사는 원활한 고객상담, 보험료확인서비스이용, 상담신청, 이벤트 응모 당시 아래와 같은 최소한의 개인정보를 필수항목으로 수집하고 있습니다.<br>
+                       - 보험료확인 및 상담신청 : 이름, 생년월일, 성별, 휴대폰, 이메일<br>
+                      서비스 이용과정이나 사업처리 과정에서 아래와 같은 정보들이 자동으로 생성되어 수집될 수 있습니다.<br>
+                       - IP Address(사이트 접근 시), 쿠키, 방문 일시, 서비스 이용 기록, 불량 이용 기록
+                    </p>
+                                  
+                    <p class="priTx">나. 개인정보 수집방법<br>
+                    홈페이지, 전화(모바일), 팩스, 경품행사응모, 이벤트응모, 제휴사로부터의 제공</p><br>
+                
+                    <p class="priTitle">2. 개인정보의 수집 및 이용목적</p>
+                    <p class="priTx">가. 금융 상담서비스</p>
+                    <p class="priTx">나. 마케팅 및 광고에 활용<br>            
+                       1. 신규 서비스(제품) 개발 및 맞춤서비스 제공<br>
+                       2. 이벤트 및 광고성 정보를 전화, 이메일, 문자 등으로 제공<br>
+                       3. 서비스의 유효성 확인, 접속 빈도 파악, 서비스이용에 대한 통계<br>
+                       4. 경품이벤트 이용에 따른 본인확인, 개인 식별, 연령확인, 불만처리 등 민원처리, 고지사항 전달, <br> 마케팅  및 광고성 정보를 전화, 이메일, 문자 등으로 제공   
+                    </p><br>
+                    <p class="priTitle">3. 개인정보의 보유 및 이용기간</p>
+                    <p class="priTx">회사는 수집한 개인정보를 다음과 같이 보유 및 이용합니다.<br>
+                                    정보동의고객 : 동의일로부터 3년</p><br>
+                                    
+                    <p class="priTitle">4. 개인정보의 제3자 제공에 관한사항</p>
+                    <p class="priTx">가. 제공업체 : (주)한국보험금융CKC지사</p> 
+                    <p class="priTx">나. 제공목적 : 금융 상담서비스</p>
+                    <p class="priTx">다. 제공하는 항목 : 이름, 생년월일, 성별, 연락처, IP Address</p>
+                    <p class="priTx">라. 제공기간 : 동의일로부터 3년</p>
+                    <p class="priTx">* 당사는 (주)한국보험금융 CKC지사에서 단독보험대리점인 (주)아하봄으로 변경을 진행중에 있으며, 이를 위해 제3자 제공동의가 필요할 뿐 다른 용도로 사용하지 않습니다.</p>                                 
+                </div> 
+           </div> 
+        </div>  
+  
+  
+  
+</div>
+
+</body>
+</html>
