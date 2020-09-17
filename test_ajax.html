@@ -18,16 +18,16 @@ function showHint(str) {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
 
-      console.log(this.readyState);
-
-      console.log(this.status);
+      
 
       
       if (this.readyState == 4 && this.status == 200) {
         document.getElementById("txtHint").innerHTML = this.responseText;
       }
       else{
-        console.log('안된거같음');
+        console.log('안된거같음');console.log(this.readyState);
+
+      console.log(this.status);
       }
     };
     xmlhttp.open("GET", "gethint.php?q=" + str, true);
