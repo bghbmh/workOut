@@ -20,6 +20,9 @@ function showHint(str) {
       if (this.readyState == 4 && this.status == 200) {
         document.getElementById("txtHint").innerHTML = this.responseText;
       }
+      else{
+        console.log('안된거같음');
+      }
     };
     xmlhttp.open("GET", "gethint.php?q=" + str, true);
     xmlhttp.send();
