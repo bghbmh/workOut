@@ -20,9 +20,10 @@ function showHint(str) {
 
       
 
-      
+
       if (this.readyState == 4 && this.status == 200) {
         document.getElementById("txtHint").innerHTML = this.responseText;
+        str = str + "?q=";
       }
       else{
         console.log('안된거같음');console.log(this.readyState);
@@ -30,7 +31,7 @@ function showHint(str) {
       console.log(this.status);
       }
     };
-    xmlhttp.open("GET", "gethint.php?q=" + str, true);
+    xmlhttp.open("GET", "gethint.php" + str, true);
     xmlhttp.send();
   }
 }
