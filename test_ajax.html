@@ -18,17 +18,17 @@ function showHint(str) {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
 
-      
+      str = str + "?q=";
 
 
       if (this.readyState == 4 && this.status == 200) {
         document.getElementById("txtHint").innerHTML = this.responseText;
-        str = str + "?q=";
+
       }
       else{
         console.log('안된거같음');console.log(this.readyState);
 
-      console.log(this.status);
+      console.log(str);
       }
     };
     xmlhttp.open("GET", "gethint.php" + str, true);
