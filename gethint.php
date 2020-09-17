@@ -35,7 +35,7 @@ $a[] = "Vicky";
 $q = $_REQUEST["q"];
 
 $hint = "";
-
+echo $q;
 // lookup all hints from array if $q is different from "" 
 if ($q !== "") {
   $q = strtolower($q);
