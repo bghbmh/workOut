@@ -40,32 +40,31 @@ ttt
   function sendLink() {
     Kakao.Link.sendDefault({
       objectType: 'feed',
-      content: {
-        title: '다른걸로',
-        description: '#모나리자 #딸기 #삼평동 #카페 #분위기 #소개팅',
-        imageUrl:
-          'http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
-        link: {
-          mobileWebUrl: 'https://developers.kakao.com',
-          webUrl: 'https://developers.kakao.com',
-        },
-      },
-      buttons: [
-        {
-          title: '웹으로 보기',
-          link: {
-            mobileWebUrl: 'https://www.daum.net',
-            webUrl: 'https://www.daum.net',
-          },
-        },
-        {
-  			title: '프로필 보기',
-  			link: {
-    				mobileWebUrl: 'https://naver.com',
-    				webUrl: 'https://naver.com'
-  			}
-		}        
-      ],
+		content: {
+	        	title: '다른걸로',
+	        	description: '#모나리자 #딸기 #삼평동 #카페 #분위기 #소개팅',
+	        	imageUrl: 'http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
+	        	link: {
+						mobileWebUrl: 'https://developers.kakao.com',
+						webUrl: 'https://developers.kakao.com',
+	    		}
+		},
+		buttons: [
+	        {
+				title: '웹으로 보기',
+				link: {
+						mobileWebUrl: 'https://www.daum.net',
+						webUrl: 'https://www.daum.net',
+				},
+	        },
+	        {
+	  			title: '프로필 보기',
+	  			link: {
+	    				mobileWebUrl: 'https://naver.com',
+	    				webUrl: 'https://naver.com'
+	  			}
+			}        
+		],
     })
   }
 </script>
