@@ -32,9 +32,22 @@
 <body>
 232323<br>
 
+<a id="channel-chat-button" href="#" onclick="void chatChannel();">
+  <img
+    src="/tool/resource/static/img/button/channel/consult/consult_small_yellow_pc.png"
+  />
+</a>
+<script type="text/javascript">
+  function chatChannel() {
+    Kakao.Channel.chat({
+      channelPublicId: '_xcLqmC',
+    })
+  }
+</script>
 
 
-
+<br><br><br><br>
+========================================
 
 <a id="kakao-link-btn" href="javascript:sendLink()">
   <img
