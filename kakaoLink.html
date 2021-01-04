@@ -38,28 +38,21 @@ ttt
   />
 </a>
 <script type="text/javascript">
-  function loginWithKakao() {
+   function loginWithKakao() {
     Kakao.Auth.login({
       success: function(authObj) {
-        alert(JSON.stringify(authObj))
+
+        console.log('임시 : '+ JSON.stringify(authObj));
+
+        var token = JSON.stringify(authObj);
+        document.write('임시 : '+ JSON.stringify(authObj) + '<br>');
+       
       },
       fail: function(err) {
-        alert(JSON.stringify(err))
+        console.log('mmm : '+ JSON.stringify(err));
       },
     })
   }
-/**/
-
-Kakao.API.request({
-  url: '/v1/api/talk/profile',
-  success: function(response) {
-    console.log('임시 : '+ response);
-  },
-  fail: function(error) {
-    console.log('error : '+ error);
-  }
-});
-
 
 </script>
 
