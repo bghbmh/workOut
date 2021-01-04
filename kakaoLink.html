@@ -31,42 +31,36 @@
 
 <body>
 ttt
-<a id="kakao-link-btn" href="javascript:sendLink()">
+<a id="custom-login-btn" href="javascript:loginWithKakao()">
   <img
-    src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
+    src="//k.kakaocdn.net/14/dn/btqCn0WEmI3/nijroPfbpCa4at5EIsjyf0/o.jpg"
+    width="222"
   />
 </a>
 <script type="text/javascript">
-  function sendLink() {
-    Kakao.Link.sendDefault({
-      objectType: 'feed',
-		content: {
-	        	title: '다른걸로',
-	        	description: '#모나리자 #딸기 #삼평동 #카페 #분위기 #소개팅',
-	        	imageUrl: 'https://bghbmh.github.io/workOut/monarisa.JPG',
-	        	link: {
-						mobileWebUrl: 'https://bghbmh.github.io/workOut/index1.html',
-						webUrl: 'https://bghbmh.github.io/workOut/index1.html',
-	    		}
-		},
-		buttons: [
-	        {
-				title: '웹으로 보기',
-				link: {
-						mobileWebUrl: 'https://bghbmh.github.io/workOut/index1.html',
-						webUrl: 'https://bghbmh.github.io/workOut/index1.html',
-				},
-	        },
-	        {
-	  			title: '프로필 보기',
-	  			link: {
-	    				mobileWebUrl: 'https://bghbmh.github.io/workOut/kakaoLink.html',
-	    				webUrl: 'https://bghbmh.github.io/workOut/kakaoLink.html'
-	  			}
-			}        
-		],
+/*  function loginWithKakao() {
+    Kakao.Auth.login({
+      success: function(authObj) {
+        alert(JSON.stringify(authObj))
+      },
+      fail: function(err) {
+        alert(JSON.stringify(err))
+      },
     })
   }
+*/
+
+Kakao.API.request({
+  url: '/v1/api/talk/profile',
+  success: function(response) {
+    console.log('임시 : '+ response);
+  },
+  fail: function(error) {
+    console.log('error : '+ error);
+  }
+});
+
+
 </script>
 
 
