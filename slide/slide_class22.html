@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<title></title>
+
+<link rel="stylesheet" href="../css/basic.css" type="text/css" media="all" />
+<link rel="stylesheet" href="mySlide.css" type="text/css" media="all" />
+<script src="mySlide.js"></script> 
+
+</head>
+
+<style>
+	body{margin:0; padding: 0}
+	section{
+		position: relative;
+		width: 100%;
+		height: 90vh;
+	}
+	h1{
+		font-size: 15px;
+	}
+
+</style>
+<body>
+	<section style="background: #f5f5f5"></section>
+
+	<section>
+		<div class="slide">
+			<ul class="items">
+				<li style="background: url('../img/mimg01.jpg')">
+					<button class="moreLink" style="cursor: pointer;">자세히보기</button> 
+					<a href="https://www.dothome.co.kr/index.php" class="moreLink" style="cursor: pointer;">자세히보기</a>
+					<!-- <img src=""> -->					
+				</li>
+				<li style="background: url('../img/mimg02.jpg')">
+					<a href="" class="moreLink" style="cursor: pointer;">자세히보기</a>
+					<!-- <img src="mimg02.jpg"> -->
+				</li>
+				<li style="background: url('../img/mimg03.jpg')">
+					<a href="" class="moreLink" style="cursor: pointer;">자세히보기</a>
+					<!-- <img src="mimg03.jpg"> -->
+				</li>
+				<li style="background: url('../img/mimg04.jpg')">
+					<a href="" class="moreLink" style="cursor: pointer;">자세히보기</a>
+					<!--<img src="mimg04.jpg"> -->					  
+				</li>
+			</ul>
+			<div class="controlBtn">
+				<button type="button" class="prev"><span class="icons arrowLeft"></span></button>
+				<button type="button" class="next"><span class="icons arrowRight"></span></button>
+			</div>
+		</div>
+	</section>
+<!-- 	<section>
+		<div class="slide">
+			<ul class="items">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+			</ul>
+			<div class="btn">
+				<button type="button" class="prev"><span class="icons arrowLeft"></span></button>
+				<button type="button" class="next"><span class="icons arrowRight"></span></button>
+			</div>
+-->
+		</div>
+	</section> -->
+	<!-- --><section style="background: #f5f5f5"></section>
+	<section style="background: #f5f5f5"></section>
+	<section style="background: #f5f5f5"></section>
+	<section style="background: #f5f5f5"></section>
+	<section style="background: #ff0"></section> 
+
+<script>
+
+
+
+
+
+
+function slideInit(){
+
+	let slide = document.querySelectorAll('.slide');
+	let arr;
+
+	if( slide !== null )
+	{
+		for( let i=0; i<slide.length; i++ )
+		{
+			arr =new mySlide(slide[i], 10);
+		}
+	}
+
+console.log("load, resize");
+
+}
+
+
+slideInit();
+window.addEventListener('resize', slideInit);
+document.querySelectorAll(".moreLink")[0].addEventListener("click", function(e){
+	e.stopPropagation();
+	console.log("button __moreLink");
+});
+
+document.querySelectorAll(".moreLink")[1].addEventListener("click", function(e){
+	e.stopPropagation();
+	console.log("a __moreLink");
+});
+
+</script>
+
+</body>
+</html>
